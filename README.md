@@ -1,4 +1,4 @@
-# upvote_survey
+# upvote_survey using Google Sheets and Apps Scripts
 
 This is a Web App created with Google Apps Script that you run off a Google Sheet to create a survey where users can add Upvotes to posted items, or add new items to the poll/survey.  It will update the vote count with each submission. 
 
