@@ -2,7 +2,7 @@
 
 This is a Web App created with Google Apps Script that you run off a Google Sheet to create a survey where users can add Upvotes to posted items, or add new items to the poll/survey.  It will update the vote count with each submission. 
 
-![sample]([http://url/to/img.png](https://github.com/ryanrwatkins/upvote_survey/blob/main/sample_image.png))
+![sample]([https://github.com/ryanrwatkins/upvote_survey/blob/main/sample_image.png])
 
 
 After adding the files to your Apps Script, you then have to click on Deploy in order to run the Web App.
