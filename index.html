@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+
+  <head>
+    <base target="_top">
+
+    <script>
+
+
+      function displayMessage(url) {
+        var use;
+        use = document.getElementById('my_use').value;
+        console.log('My Use: ' + use );
+         google.script.run.withSuccessHandler().processForm(use.replace("'","\'")); 
+         document.getElementById("output").innerHTML = "Your submitted use = " + use;
+        setTimeout(window.open(url,'_top'), 600);
+
+        
+       }
+         
+        
+      function handleResults(results){
+         var length=results.length; // total elements of results
+       }
+
+
+
+
+    function add_value(a,b, url) {
+      google.script.run.withSuccessHandler().add_value_ss(a,b); 
+      window.open(url,'_top');
+    }
+
+
+  
+    </script>
+  </head>
+
+
+
+<body>
+  <div >
+  <center><br/>
+<p>
+   Add How I am Using AI: <input type="text" id="my_use" name="search">
+    <input type="button" value="Submit" name="submitButton" onclick="displayMessage(<?= ScriptApp.getService().getUrl() ?>)"/>
+    <br>
+    <div id="output"></div>
+<p>
+
+   <h1> <p>Top Ways Students Are Using AI:</h1><p>
+  <table  style="width:50%; border:1px;"> 
+  <tr>
+    <th>Use</th>
+    <th>Upvote It!</th>
+  </tr>
+
+    
+   <?    for (var i = 0; i < uses.length; i++) {  ?>
+      <tr>
+    <td> <div id="uses_<?= i + 1; ?>">  <?= uses[i][0]; ?> </div> </td>
+    <td style="text-align: center"> 
+
+<button type="button" value="<?= uses[i][1] + 1; ?>" id="upvote_button_<?= i + 1; ?>" name="upvote_button_<?= i + 1; ?>" 
+ 
+onclick="add_value(<?= i + 1; ?>, <?= uses[i][1] + 1; ?>, <?= ScriptApp.getService().getUrl() ?> )" >Upvote (<?= uses[i][1]; ?>)</button>
+
+    </td>
+    </tr>
+    
+      <?  }  ?>
+
+</table>
+<p>
+
+
+
+
+</center>
+   </div>
+
+  </body>
+</html>
